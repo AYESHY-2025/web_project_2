@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Comprehensive front-end project with HTML, CSS, and JavaScript" />
+  <title>All-in-One Web Project</title>
+
+  <style>
+    /* === CSS Section === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #00aced;
+    }
+
+    section {
+      padding: 40px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .grid div {
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .grid div:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    form input, form textarea, form select, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+
+    .faq-item {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .faq-answer {
+      display: none;
+      padding-left: 10px;
+      color: #555;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === Header and Navigation === -->
+  <header>
+    <h1>My Web Project</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- === Home Section === -->
+  <section id="home" class="hero">
+    <h2>Welcome to My Project</h2>
+    <p>This is a hero section introduction.</p>
+    <img src="https://via.placeholder.com/400" alt="Hero Image" />
+  </section>
+
+  <!-- === About Section === -->
+  <section id="about">
+    <h2>About This Project</h2>
+    <p>This project is a front-end assignment demonstrating HTML, CSS, and JavaScript skills. It includes responsive design, dynamic content, and accessible structure.</p>
+  </section>
+
+  <!-- === Gallery Section === -->
+  <section id="gallery">
+    <h2>Gallery / Services</h2>
+    <div class="grid">
+      <div><img src="https://via.placeholder.com/200" alt="Gallery 1" /><p>Service 1</p></div>
+      <div><img src="https://via.placeholder.com/200" alt="Gallery 2" /><p>Service 2</p></div>
+      <div><img src="https://via.placeholder.com/200" alt="Gallery 3" /><p>Service 3</p></div>
+    </div>
+  </section>
+
+  <!-- === FAQ Section === -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div>
+      <p class="faq-item">What is this project about?</p>
+      <p class="faq-answer">This is a responsive front-end web development project.</p>
+
+      <p class="faq-item">What technologies are used?</p>
+      <p class="faq-answer">HTML5, CSS3 (Flexbox/Grid), and vanilla JavaScript.</p>
+    </div>
+  </section>
+
+  <!-- === Contact Section === -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <select>
+        <option value="">Select a topic</option>
+        <option value="feedback">Feedback</option>
+        <option value="help">Need Help</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- === Footer === -->
+  <footer>
+    <p>&copy; 2025 My Web Project</p>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+      Your browser does not support audio.
+    </audio>
+  </footer>
+
+  <!-- === JavaScript Section === -->
+  <script>
+    // Contact form validation
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      if (!name || !email.includes("@")) {
+        alert("Please enter a valid name and email.");
+      } else {
+        alert("Form submitted successfully!");
+      }
+    });
+
+    // FAQ toggle
+    document.querySelectorAll(".faq-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
+</body>
+</html>
